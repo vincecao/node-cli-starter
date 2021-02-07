@@ -6,15 +6,13 @@
 		"start": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
-		"build:styles": "npx tailwindcss build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/tailwind.css",
+		"build:styles": "npx tailwindcss-cli@latest build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/tailwind.css",
 		"prebuild": "npm run build:styles",
 		"prestart": "npm run build:styles"
 	},
 	"dependencies": {
-		"autoprefixer": "^9",
 		"core-js": "^3.6.5",
-		"postcss": "^7",
-		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
+		"tailwindcss-cli": "^0.1.2",
 		"vue": "^3.0.0"
 	},
 	"devDependencies": {
@@ -22,9 +20,12 @@
 		"@vue/cli-plugin-eslint": "~4.5.0",
 		"@vue/cli-service": "~4.5.0",
 		"@vue/compiler-sfc": "^3.0.0",
+		"autoprefixer": "^9.8.6",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^6.7.2",
-		"eslint-plugin-vue": "^7.0.0-0"
+		"eslint-plugin-vue": "^7.0.0-0",
+		"postcss": "^7.0.35",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
 	},
 	"eslintConfig": {
 		"root": true,
