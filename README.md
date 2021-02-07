@@ -1,13 +1,19 @@
 # Create React App Enhanced Template (typescript)
 
-* root import
+For Javascript version, please check [CRA-Enhanced-Template](https://github.com/vincecao/CRA-Enhanced-Template)
+
+This template add following features:
+
+* Latest `TailwindCSS-v2` with `PureCSS-8` & `autoprefixer-10`
+* root import with `eslint` and `jest`
+* `prettier`,       `husky` & `lint-staged` for formatting with commit hook
 
 ``` bash
 components #src/components 
 ...
 ```
 
-Could check on this [demo](https://vince-amazing.com/Create-React-App-Enhanced-Template-typescript/) branch
+Could check on this [demo](https://vince-amazing.com/CRA-Enhanced-Template-typescript/) branch
 
 ## Project setup
 
