@@ -1,4 +1,4 @@
-const path = require('path');
+var path = require('path');
 // This helper function is not strictly necessary.
 // I just don't like repeating the path.join a dozen times.
 function srcPath(subdir) {

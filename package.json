@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "create-react-app-enhanced-template-typescript",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,7 +8,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.20",
-    "@types/node": "^12.19.16",
+    "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
     "react": "^17.0.1",
@@ -20,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:styles": "npx tailwindcss build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/tailwind.css",
+    "prebuild": "npm run build:styles --prod",
+    "prestart": "npm run build:styles"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "postcss": "^8.2.5",
+    "tailwindcss": "^2.0.2"
   }
 }

@@ -21,6 +21,12 @@ npm run start
 npm run build
 ```
 
+# Upgrade dependencies
+
+``` bash
+yarn upgrade --latest
+```
+
 # TODO
 
 Seems Like facing `aliased imports are not supported` issue  when add `paths` in `compilerOptions`

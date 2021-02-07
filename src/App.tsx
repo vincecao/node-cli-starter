@@ -1,21 +1,19 @@
 import React from 'react';
 import logo from 'logo.svg';
-import 'App.css';
+import 'tailwind.css';
 import Button from 'components/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+    <div className="bg-black h-screen w-full flex justify-center items-center">
+      <div className="text-center">
+        <img src={logo} className="animate-spin h-32 m-auto mb-10" alt="logo" />
+        <p className="text-white text-lg my-5">
+          Edit <code className="p-1 font-mono text-sm bg-gray-800 text-yellow-600 rounded-lg">src/App.jsx</code> and
+          save to reload.
         </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
         <Button />
-      </header>
+      </div>
     </div>
   );
 }
