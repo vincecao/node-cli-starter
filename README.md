@@ -4,9 +4,9 @@ For Javascript version, please check [CRA-Enhanced-Template](https://github.com/
 
 This template add following features:
 
-* Latest `TailwindCSS-v2` with `PureCSS-8` & `autoprefixer-10`
-* root import with `eslint` and `jest`
-* `prettier`,       `husky` & `lint-staged` for formatting with commit hook
+* Latest`TailwindCSS-v2` with `PureCSS-8` & `autoprefixer-10`
+* root import with`eslint` and `jest`
+* `prettier`, `husky` & `lint-staged` for formatting with commit hook
 
 ``` bash
 components #src/components 
@@ -20,10 +20,10 @@ Could check on this [demo](https://vince-amazing.com/CRA-Enhanced-Template-types
 ``` bash
 npm install
 
-# serve
+# Development, tailwindcss purge -> enabled: false, size ~ Size: 3.9MB
 npm run start
 
-# build
+# Production build, tailwindcss purge -> enabled: true, size ~ Size: 13.04KB
 npm run build
 ```
 
