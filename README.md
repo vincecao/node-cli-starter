@@ -2,6 +2,14 @@
 
 _(Fixed PureCSS)_
 
+* TailwindCSS
+* root import
+
+``` bash
+~ #src/
+@components #src/components 
+```
+
 Could check on this [demo](https://vince-amazing.com/Vue-3-TailwindCSS-Template/) branch
 
 ## Project setup
