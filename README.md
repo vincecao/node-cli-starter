@@ -2,16 +2,18 @@
 
 _(Fixed PureCSS)_
 
+Could check on this [demo](https://vince-amazing.com/Vue-3-TailwindCSS-Template/) branch
+
 ## Project setup
 
 ``` bash
-yarn
+npm install
 
 # serve
-yarn start
+npm run start
 
 # build
-yarn build
+npm run build
 ```
 
 ## Fixed with PureCSS Error manually
@@ -19,5 +21,5 @@ yarn build
 [Error: PostCSS plugin tailwindcss requires PostCSS 8](https://stackoverflow.com/questions/64925926/error-postcss-plugin-tailwindcss-requires-postcss-8)
 
 ``` bash
-yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+npm install tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
 ```
