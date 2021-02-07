@@ -1,24 +1,23 @@
-# hello-world
+# Vue 3 & TailwindCSS Template 
+
+_(Fixed PureCSS)_
 
 ## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+``` bash
+yarn
 
-### Compiles and minifies for production
-```
+# serve
+yarn start
+
+# build
 yarn build
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Fixed with PureCSS Error manually
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Error: PostCSS plugin tailwindcss requires PostCSS 8](https://stackoverflow.com/questions/64925926/error-postcss-plugin-tailwindcss-requires-postcss-8)
+
+``` bash
+yarn add tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+```
