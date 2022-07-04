@@ -1,9 +1,85 @@
 # Firebase Functions GraphQL Server
-This is a implementation for creating [firebase functions](https://www.npmjs.com/package/firebase-functions) and accessing [realtime database](https://firebase.google.com/docs/database) with a [GraphQL](https://graphql.org/) Typescript server. 
+This is a implementation for creating [Firebase Functions](https://www.npmjs.com/package/firebase-functions) and accessing [Firebase Realtime Database](https://firebase.google.com/docs/database) with a [GraphQL](https://graphql.org/) Typescript server. Allowing basic `Query` and `Mutation` operation.
 
-![](./screenshots/graphql-server-functions.jpg)
+![](./screenshots/query-operation.jpg)
 
 > Notice: `Firebase Functions` is only accessible when you are under a [Blaze](https://firebase.google.com/pricing) (Pay as you go) plan. You also need to enable [Artifact Registry API](https://console.cloud.google.com/apis/api/artifactregistry.googleapis.com/metrics?project=fr-gql) in order to deploy this function successfully.
+
+### Sample Query Operation
+```gql
+# Operation
+query {
+  cats {
+    name
+    description
+    lifespan
+  }
+}
+```
+![](./screenshots/cats-query.jpeg)
+### Sample Mutation Operation
+#### `createCat`
+```gql
+# Operation
+mutation($input: CatInput!) {
+  createCat(input: $input) {
+    name
+    description
+    lifespan
+  }
+}
+```
+
+```bash
+# Variables
+{
+  "input": {
+    "name": "new cat",
+    "description": "A new description for new cat.",
+    "lifespan": "10 year"
+  }
+}
+```
+![](./screenshots/create-cat-mutation.jpeg)
+
+####  `updateCat`
+```gql
+# Operation
+mutation($input: CatInput!) {
+  updateCat(input: $input) {
+    name
+    description
+  }
+}
+```
+
+```bash
+# Variables
+{
+  "input": {
+    "name": "new cat",
+    "description": "A new description for new cat (modified).",
+    "lifespan": "10 year (modified)"
+  },
+}
+```
+![](./screenshots/update-cat-mutation.jpeg)
+
+####  `removeCat`
+```gql
+# Operation
+mutation($input: String!) {
+  removeCat(input: $input)
+}
+```
+
+```bash
+# Variables
+{
+  "input": "new cat",
+}
+```
+![](./screenshots/remove-cat-mutation.jpeg)
 
 ## Prerequisite
 Initialize a new Firebase Functions Project through [Firebase CLI](https://firebase.google.com/docs/cli).
@@ -107,10 +183,25 @@ Replacing `typeDefs` and `resolvers` inside `./src/index.ts`.
 yarn deploy
 ```
 
+## Check in your Firebase Functions
+After deploying, you should get your `Firebase Functions`  link from `Firebase => Build => Functions` page.
+
+![](./screenshots/firebase-functions-link.jpeg) 
+
+You can call POST this link with Query and Mutation operations. Clinking the link should bring you to Apollo graphQL Studio Sandbox. Other API tools like [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/)
+also can get the job done.
+
+![](./screenshots/postman-post.jpeg) 
+
 ## License
 MIT
 
 ### Reference
+- [Introduction to the Admin Database API](https://firebase.google.com/docs/database/admin/start)
+- [Saving Data](https://firebase.google.com/docs/database/admin/save-data)
 - [GraphQL Server Using Firebase Functions](https://www.youtube.com/watch?v=I5irZ0AAr98)
 - [How can i generate private key for firebase admin sdk?](https://stackoverflow.com/questions/72838290/how-can-i-generate-private-key-for-firebase-admin-sdk)
 - [Firebase serve error: Port 5000 is not open. Could not start functions emulator](https://stackoverflow.com/questions/57537355/firebase-serve-error-port-5000-is-not-open-could-not-start-functions-emulator)
+- [Executable schemas - GraphQL Tools](https://www.graphql-tools.com/docs/generate-schema)
+- [Resolvers - GraphQL Tools](https://www.graphql-tools.com/docs/resolvers)
+- [Designing GraphQL Mutations](https://www.apollographql.com/blog/graphql/basics/designing-graphql-mutations/)
