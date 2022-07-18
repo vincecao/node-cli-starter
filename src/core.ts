@@ -1,7 +1,7 @@
 import { getDatabase } from "firebase-admin/database";
 import { Cat } from "./type";
 
-export async function getCats(): Promise<Cat[]> {
+export async function getCat(): Promise<Cat[]> {
   const result = await getDatabase()
     .ref("cats")
     .once("value")
@@ -13,7 +13,11 @@ export async function getCats(): Promise<Cat[]> {
   return result;
 }
 
-export async function updateCats(cat: Cat): Promise<void> {
+export async function createCat(cat: Cat): Promise<void> {
+  await getDatabase().ref("cats").push(cat);
+}
+
+export async function updateCat(cat: Cat): Promise<void> {
   await getDatabase()
     .ref("cats")
     .orderByChild("name")
@@ -26,7 +30,7 @@ export async function updateCats(cat: Cat): Promise<void> {
     });
 }
 
-export async function removeCats(name: string): Promise<void> {
+export async function removeCat(name: string): Promise<void> {
   await getDatabase()
     .ref("cats")
     .orderByChild("name")

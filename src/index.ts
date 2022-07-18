@@ -1,7 +1,6 @@
 import { https } from "firebase-functions";
 import * as admin from "firebase-admin";
 import { ServiceAccount } from "firebase-admin";
-import { getDatabase } from "firebase-admin/database";
 import * as express from "express";
 
 /* eslint-disable */
@@ -13,7 +12,7 @@ import {
   account_key as ACCOUNT_KEY,
 } from "./database_environment.json";
 import { Cat } from "./type";
-import { getCats, updateCats, removeCats } from "./core";
+import { getCat, updateCat, removeCat, createCat } from "./core";
 
 admin.initializeApp({
   credential: admin.credential.cert(ACCOUNT_KEY as ServiceAccount),
@@ -52,21 +51,21 @@ const typeDefs = gql`
 const resolvers = {
   // this resolvers allows the following query operation:
   Query: {
-    cats: getCats,
+    cats: getCat,
   },
 
   // this resolvers allows the following mutation operation:
   Mutation: {
     createCat: async (_: any, { input: cat }: { input: Cat }) => {
-      await getDatabase().ref("cats").push(cat);
-      return getCats();
+      await createCat(cat);
+      return getCat();
     },
     updateCat: async (_: any, { input: cat }: { input: Cat }) => {
-      await updateCats(cat);
-      return getCats();
+      await updateCat(cat);
+      return getCat();
     },
     removeCat: async (_: any, { input: name }: { input: string }) => {
-      await removeCats(name);
+      await removeCat(name);
       return name;
     },
   },
