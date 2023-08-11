@@ -1,0 +1,42 @@
+name: Publish
+# Rreference
+# https://github.com/electron-react-boilerplate/electron-react-boilerplate/blob/main/.github/workflows/publish.yml
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  pull-requests: none
+  issues: none
+  packages: none
+
+jobs:
+  publish:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest]
+
+    steps:
+      - name: Checkout git repo
+        uses: actions/checkout@v3
+
+      - name: Install yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install and build
+        run: |
+          echo "${{ secrets.DOT_ENV_FILE }}" >> .env
+          yarn install && yarn postinstall
+          yarn build
+      - name: Publish releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm exec electron-builder -- --publish=always --win --mac --linux
