@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        gaultier: ["gaultier"],
-        gothamHtf: ["gotham-htf"],
+        // check examples for font imports in /src/tailwind.css
+        home: ["gaultier"],
       },
       zIndex: {
         header: "999",
