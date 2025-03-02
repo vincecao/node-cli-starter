@@ -1,11 +1,11 @@
-import express from "express";
+import express, { Application, Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes.js";
+import userRoutes from "./routes/userRoutes";
 
 dotenv.config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const app: Application = express();
+const PORT: string | number = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 
 // Error handling middleware
-app.use((err, req, res, next) => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ message: "Something went wrong!" });
 });
