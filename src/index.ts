@@ -1,6 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes";
+import userRoutes from "./routes/user-routes";
 
 dotenv.config();
 
@@ -11,7 +11,7 @@ const PORT: string | number = process.env.PORT || 3000;
 app.use(express.json());
 
 // Routes
-app.use("/api/users", userRoutes);
+app.use("/api", userRoutes);
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
