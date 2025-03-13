@@ -8,6 +8,8 @@ A simple command-line interface tool template for greeting users, with [commande
 pnpm i
 
 pnpm run dev hello [name]
+
+pnpm run test
 ```
 
 ## Installation
