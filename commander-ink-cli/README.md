@@ -25,14 +25,14 @@ npm install -g .
 ## Uninstallation
 
 ```bash
-npm remove -g node-cli-starter
+npm remove -g commander-ink-cli
 ```
 
 ## Usage
 
 ### Basic Command
 
-To greet someone:
+#### To greet someone:
 
 ```bash
 mycli hello [name]
@@ -57,15 +57,26 @@ Example:
 mycli hello Maria --language es
 ```
 
+#### To view author with ink component:
+
+``` bash
+mycli whoami
+```
+
+Example:
+
+
+
 ## Commands
 
-| Command        | Description                 | Options                 |
-| -------------- | --------------------------- | ----------------------- |
-| `hello <name>` | Greets the specified person | `-l, --language <lang>` |
+| Command        | Description                          | Options                 |
+|----------------|--------------------------------------|-------------------------|
+| `hello <name>` | Greets the specified person          | `-l, --language <lang>` |
+| `whoami`       | Display author name with Ink styling | -                       |
 
 ## Version
 
-Current version: 1.0.0
+Current version: 1.0.1
 
 ## License
 

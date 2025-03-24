@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { helloCommand } from "./index";
+import { helloCommand } from "./index.js";
 
 describe("CLI functionality", () => {
   it("should greet in English by default", () => {

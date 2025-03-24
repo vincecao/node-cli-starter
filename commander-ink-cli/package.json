@@ -1,0 +1,30 @@
+{
+  "name": "commander-ink-cli",
+  "version": "1.0.1",
+  "description": "A command-line interface tool for greeting users, built with Commander and Ink",
+  "author": "Lineng Cao",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "mycli": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "dev": "tsx src/index.tsx"
+  },
+  "keywords": [],
+  "dependencies": {
+    "commander": "^13.1.0",
+    "ink": "^5.2.0",
+    "react": "18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "18",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}
