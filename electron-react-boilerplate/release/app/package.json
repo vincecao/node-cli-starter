@@ -1,0 +1,15 @@
+{
+  "name": "erb-template",
+  "version": "1.0.0",
+  "main": "./dist/main/main.js",
+  "author": {
+    "name": "Lineng Cao",
+    "email": "lineng.ca@gmail.com",
+    "url": "https://github.com/vincecao/erb-template"
+  },
+  "scripts": {
+    "rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
+    "postinstall": "npm run rebuild && npm run link-modules",
+    "link-modules": "node -r ts-node/register ../../.erb/scripts/link-modules.ts"
+  }
+}
