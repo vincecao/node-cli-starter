@@ -65,7 +65,7 @@ mycli whoami
 
 Example:
 
-
+<img width="487" alt="Screenshot 2025-03-24 at 01 23 40" src="https://github.com/user-attachments/assets/30a863db-df6e-4e42-9971-916bb99b33f2" />
 
 ## Commands
 
