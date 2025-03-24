@@ -1,0 +1,4 @@
+{
+  "database_url": "Get this key JSON from <https://console.firebase.google.com/u/0/project/your-project/settings/serviceaccounts/adminsdk>",
+  "account_key": "Get this key JSON from <https://console.cloud.google.com/iam-admin/serviceaccounts>"
+}
