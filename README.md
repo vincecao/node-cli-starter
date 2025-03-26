@@ -2,6 +2,7 @@
 
 | Subfolder Name                      | Description                                                                                |
 | ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `vite-tanstack-tailwindcss`         | A Vite template with TanStack Router, React Query, and Tailwind CSS for modern web apps.   |
 | `commander-ink-cli`                 | A command-line interface template utilizing Commander.js and Ink for user interactions.    |
 | `cra-enhanced-typescript`           | A streamlined template for Create React App (CRA).                                         |
 | `electron-react-boilerplate`        | A lightweight ERB template designed for rapid setup of web applications.                   |

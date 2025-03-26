@@ -1,0 +1,46 @@
+{
+  "name": "vite-tanstack-tailwindcss",
+  "version": "1.0.0",
+  "description": "A Vite template that integrates TanStack and Tailwind CSS for building modern web applications with a streamlined development experience.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run src/",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Lineng Cao",
+  "license": "MIT",
+  "dependencies": {
+    "@tanstack/react-query": "^5.69.0",
+    "@tanstack/react-query-devtools": "^5.69.0",
+    "@tanstack/react-router": "^1.114.27",
+    "@tanstack/zod-adapter": "^1.114.27",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "usehooks-ts": "^3.1.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@tanstack/router-devtools": "^1.114.27",
+    "@tanstack/router-plugin": "^1.114.27",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-basic-ssl": "^2.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "husky": "^9.1.7",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3",
+    "vitest": "^3.0.9"
+  }
+}
