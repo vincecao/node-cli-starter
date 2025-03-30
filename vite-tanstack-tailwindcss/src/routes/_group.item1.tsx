@@ -1,49 +1,29 @@
-// import { queryOptions, useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
-import { zodValidator } from "@tanstack/zod-adapter";
-import { z } from "zod";
 
-import BackButton from "../shared/BackButton";
+import BackButton from "../shared/components/BackButton";
+import { Client } from "../shared/service";
 
-/**
-export async function fetch(params) {
-  return
+async function fetch(api: Client) {
+  return api.demo.catFacts();
 }
-
-export const options = (
-  ...args: Parameters<typeof fetch>
-) =>
-  queryOptions({
-    queryKey: ["key", args[0]],
-    queryFn: () => fetch(...args),
-  });
-*/
 
 export const Route = createFileRoute("/_group/item1")({
   component: RouteComponent,
-  validateSearch: zodValidator(
-    z.object({
-      user: z.string().optional(),
-    })
-  ),
-  loaderDeps: ({ search }) => search,
-  async loader({ context, deps }) {
-    console.log(deps.user); // type safe
-    // context.queryClient.ensureQueryData(options(...))
+  async loader({ context }) {
+    return { facts: await fetch(context.api) };
   },
 });
 
 function RouteComponent() {
-  /*
-	const query = useQuery(options(...));
-	const {data, error} = query.data;
-	const loading = query.status === "pending";
-  */
-
+  const data = Route.useLoaderData();
   return (
     <div>
       <BackButton />
       Hello "/item1"!
+      <br />
+      <br />
+      <h3 className="text-xl">Demo api with basic router loader</h3>
+      <pre>{JSON.stringify(data, null, 3)}</pre>
     </div>
   );
 }

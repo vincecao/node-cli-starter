@@ -1,6 +1,6 @@
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 
-import BackButton from "../../shared/BackButton";
+import BackButton from "../../shared/components/BackButton";
 
 export const Route = createFileRoute("/parent2")({
   component: RouteComponent,

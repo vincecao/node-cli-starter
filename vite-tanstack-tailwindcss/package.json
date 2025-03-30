@@ -1,6 +1,6 @@
 {
   "name": "vite-tanstack-tailwindcss",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Vite template that integrates TanStack and Tailwind CSS for building modern web applications with a streamlined development experience.",
   "type": "module",
   "main": "index.js",
@@ -15,12 +15,14 @@
   "author": "Lineng Cao",
   "license": "MIT",
   "dependencies": {
+    "@faker-js/faker": "^9.6.0",
     "@tanstack/react-query": "^5.69.0",
     "@tanstack/react-query-devtools": "^5.69.0",
     "@tanstack/react-router": "^1.114.27",
     "@tanstack/zod-adapter": "^1.114.27",
     "@total-typescript/ts-reset": "^0.6.1",
     "@vitejs/plugin-react-swc": "^3.8.1",
+    "axios": "^1.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "usehooks-ts": "^3.1.1",

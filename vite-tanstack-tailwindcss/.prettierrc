@@ -18,7 +18,8 @@
   "embeddedLanguageFormatting": "auto",
   "singleAttributePerLine": false,
   "importOrder": [
-    "^components/(.*)$",
+    "^react$",
+    "^(?!react$|\\./|\\.\\./).*$",
     "^[./]"
   ],
   "importOrderSeparation": true,

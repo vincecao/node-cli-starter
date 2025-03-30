@@ -37,5 +37,5 @@ npm run preview
 ## Project Structure
 
 - `src/routes/` - Application routes
-- `src/shared/` - Shared utilities and components
+- `src/shared/` - Shared utilities, services and components
 - `src/styles/` - Global styles and Tailwind config

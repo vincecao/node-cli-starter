@@ -21,11 +21,11 @@ function Home() {
         to singleFolderRoute with layout/index and its nest routes
       </Link>
       <Link to="/item1" className="block w-fit bg-black text-white">
-        to singleFileRoute with hidden development group (example useQuery
-        fetch)
+        to singleFileRoute with hidden development group (example loader fetch)
       </Link>
       <Link to="/item2" className="block w-fit bg-black text-white">
-        to singleFileRoute with hidden development group
+        to singleFileRoute with hidden development group (example useQuery
+        fetch)
       </Link>
     </div>
   );

@@ -1,15 +1,18 @@
+import { ReactElement, StrictMode } from "react";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { ReactElement, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import { routeTree } from "./routeTree.gen.ts";
+import { Client } from "./shared/service.ts";
 import { TanStackRouterDevelopmentTools } from "./shared/utils/TanStackRouterDevelopmentTools.tsx";
 import "./styles/tailwind.css";
 
 const queryClient = new QueryClient();
-const router = createRouter({ routeTree, context: { queryClient } });
+const api = new Client();
+const router = createRouter({ routeTree, context: { queryClient, api } });
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
@@ -25,7 +28,7 @@ const App = (): ReactElement => {
       <TanStackRouterDevelopmentTools
         router={router}
         initialIsOpen={false}
-        position="bottom-right"
+        position="bottom-left"
       />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

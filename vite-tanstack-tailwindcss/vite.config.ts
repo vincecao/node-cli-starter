@@ -11,4 +11,9 @@ export default defineConfig({
     strictPort: true,
     https: {},
   },
+  css: {
+    modules: {
+      localsConvention: "camelCase",
+    },
+  },
 });
