@@ -1,0 +1,22 @@
+{
+  "name": "hono-nodejs-starter",
+  "type": "module",
+  "author": "Lineng Cao",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "docker:setup": "docker buildx create --use",
+    "docker:build": "docker buildx build --platform linux/amd64,linux/arm64 -t my-hono-app --load .",
+    "docker:run": "docker run --rm -p 3000:3000 my-hono-app"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "hono": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.28",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
